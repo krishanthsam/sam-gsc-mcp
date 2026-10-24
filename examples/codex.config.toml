@@ -1,0 +1,11 @@
+# ~/.codex/config.toml
+[mcp_servers.sam-gsc]
+command = "/FULL/PATH/TO/uvx"
+args = ["--from", "git+https://github.com/krishanthsam/sam-gsc-mcp", "sam-gsc-mcp"]
+startup_timeout_sec = 60
+tool_timeout_sec = 180
+
+[mcp_servers.sam-gsc.env]
+GSC_OAUTH_CLIENT_SECRETS_FILE = "/FULL/PATH/TO/client_secrets.json"
+# GSC_CREDENTIALS_PATH = "/FULL/PATH/TO/service_account.json"
+# GSC_SKIP_OAUTH = "true"

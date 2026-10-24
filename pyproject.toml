@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sam-gsc-mcp"
+version = "1.0.0"
+description = "All-in-one Google Search Console MCP server for SEOs: analytics, SEO insights, URL inspection, Indexing API, sitemaps, skills and prompts."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Krishanth Sam" }]
+keywords = [
+  "mcp", "mcp-server", "model-context-protocol", "google-search-console", "gsc", "seo",
+  "search-analytics", "url-inspection", "indexing-api", "claude", "cursor", "ai-agents",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = [
+  # Works with both MCP SDK lines (1.x FastMCP and 2.x MCPServer).
+  "mcp>=1.10.0,<3",
+  "google-api-python-client>=2.120.0",
+  "google-auth>=2.29.0",
+  "google-auth-httplib2>=0.2.0",
+  "google-auth-oauthlib>=1.2.0",
+  "platformdirs>=4.0.0",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[project.urls]
+Homepage = "https://github.com/krishanthsam/sam-gsc-mcp"
+Repository = "https://github.com/krishanthsam/sam-gsc-mcp.git"
+Issues = "https://github.com/krishanthsam/sam-gsc-mcp/issues"
+Changelog = "https://github.com/krishanthsam/sam-gsc-mcp/blob/main/CHANGELOG.md"
+
+[project.scripts]
+sam-gsc-mcp = "sam_gsc_mcp.server:main"
+gsc-mcp = "sam_gsc_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sam_gsc_mcp"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"skills" = "sam_gsc_mcp/skills"
+
+[tool.hatch.build.targets.sdist]
+include = ["sam_gsc_mcp", "skills", "README.md", "LICENSE", "CHANGELOG.md", "tests"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

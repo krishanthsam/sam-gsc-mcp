@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "sam-gsc": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/krishanthsam/sam-gsc-mcp", "sam-gsc-mcp"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "${GSC_OAUTH_CLIENT_SECRETS_FILE:-}",
+        "GSC_CREDENTIALS_PATH": "${GSC_CREDENTIALS_PATH:-}",
+        "GSC_SITE_URL": "${GSC_SITE_URL:-}"
+      }
+    }
+  }
+}

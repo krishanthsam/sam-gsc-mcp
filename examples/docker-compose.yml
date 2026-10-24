@@ -1,0 +1,18 @@
+# Remote/HTTP deployment with a service account. Clients connect to http://HOST:3001/mcp
+services:
+  sam-gsc-mcp:
+    build: ..
+    ports:
+      - "3001:3001"
+    environment:
+      MCP_TRANSPORT: streamable-http
+      GSC_CREDENTIALS_PATH: /secrets/service_account.json
+      GSC_SKIP_OAUTH: "true"
+      GSC_SITE_URL: sc-domain:example.com
+      GSC_READ_ONLY: "true"
+    volumes:
+      - ./service_account.json:/secrets/service_account.json:ro
+      - gsc-data:/data
+    restart: unless-stopped
+volumes:
+  gsc-data:

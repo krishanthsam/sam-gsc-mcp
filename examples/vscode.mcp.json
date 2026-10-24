@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "sam-gsc": {
+      "type": "stdio",
+      "command": "/FULL/PATH/TO/uvx",
+      "args": ["--from", "git+https://github.com/krishanthsam/sam-gsc-mcp", "sam-gsc-mcp"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "/FULL/PATH/TO/client_secrets.json"
+      }
+    }
+  }
+}

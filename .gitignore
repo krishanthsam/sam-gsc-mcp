@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.pytest-config/
+.venv/
+venv/
+
+# Credentials — never commit these
+.env
+*.env
+!.env.example
+client_secret*.json
+client_secrets.json
+credentials.json
+service_account*.json
+*-service-account.json
+token.json
+config.json
+
+# Exports and editors
+sam-gsc-exports/
+*.csv
+.vscode/
+.idea/
+.DS_Store

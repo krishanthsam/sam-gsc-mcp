@@ -1,0 +1,15 @@
+{
+  "name": "sam-gsc-mcp",
+  "owner": { "name": "Krishanth Sam", "url": "https://github.com/krishanthsam" },
+  "metadata": {
+    "description": "Sam GSC MCP — all-in-one Google Search Console MCP server and SEO skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "sam-gsc-mcp",
+      "source": "./",
+      "description": "Google Search Console analytics, SEO insights, URL inspection, sitemaps and 11 SEO skills."
+    }
+  ]
+}
