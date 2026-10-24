@@ -37,7 +37,6 @@ export, the Indexing API and 11 ready-made SEO skills — in one place.
 
 ## What's New
 
-### [1.0.0] — October 2026
 - **One server, everything included** — 40 tools for analytics, insights, inspection, indexing and sitemaps.
 - **SEO insight tools** — `find_striking_distance_keywords`, `find_keyword_cannibalization`, `get_brand_vs_nonbrand`
   and `find_low_ctr_opportunities` return ranked, ready-to-act lists instead of raw rows.
